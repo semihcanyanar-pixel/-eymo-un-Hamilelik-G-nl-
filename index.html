@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#c084fc">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Şeymoş'un Hamilelik Günlüğü">
+<title>Şeymoş'un Hamilelik Günlüğü</title>
+<link rel="manifest" href="#" id="manifest-link">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #f9a8d4;
+  --pink-dark: #ec4899;
+  --purple: #c084fc;
+  --purple-dark: #9333ea;
+  --blue: #93c5fd;
+  --blue-dark: #3b82f6;
+  --bg: #fdf4ff;
+  --card: #ffffff;
+  --text: #2d1b4e;
+  --text-light: #7c6f94;
+  --border: #e9d5ff;
+  --gradient: linear-gradient(135deg, #f9a8d4 0%, #c084fc 50%, #93c5fd 100%);
+  --gradient-header: linear-gradient(135deg, #ec4899 0%, #9333ea 50%, #3b82f6 100%);
+  --shadow: 0 4px 20px rgba(192, 132, 252, 0.2);
+  --shadow-lg: 0 10px 40px rgba(192, 132, 252, 0.3);
+  --radius: 20px;
+  --radius-sm: 12px;
+}
+
+/* THEMES */
+.theme-rose { --pink: #fda4af; --purple: #fb7185; --blue: #f43f5e; --bg: #fff1f2; --gradient: linear-gradient(135deg,#fda4af,#fb7185,#f43f5e); --gradient-header: linear-gradient(135deg,#e11d48,#be123c,#9f1239); --border: #fecdd3; }
+.theme-ocean { --pink: #7dd3fc; --purple: #38bdf8; --blue: #0ea5e9; --bg: #f0f9ff; --gradient: linear-gradient(135deg,#bae6fd,#7dd3fc,#38bdf8); --gradient-header: linear-gradient(135deg,#0284c7,#0369a1,#1d4ed8); --border: #bae6fd; }
+.theme-sage { --pink: #bbf7d0; --purple: #86efac; --blue: #4ade80; --bg: #f0fdf4; --gradient: linear-gradient(135deg,#bbf7d0,#86efac,#4ade80); --gradient-header: linear-gradient(135deg,#16a34a,#15803d,#166534); --border: #bbf7d0; }
+.theme-peach { --pink: #fed7aa; --purple: #fb923c; --blue: #f97316; --bg: #fff7ed; --gradient: linear-gradient(135deg,#fed7aa,#fdba74,#fb923c); --gradient-header: linear-gradient(135deg,#ea580c,#c2410c,#9a3412); --border: #fed7aa; }
+.theme-lavender { --pink: #ddd6fe; --purple: #a78bfa; --blue: #7c3aed; --bg: #faf5ff; --gradient: linear-gradient(135deg,#ede9fe,#ddd6fe,#c4b5fd); --gradient-header: linear-gradient(135deg,#7c3aed,#6d28d9,#5b21b6); --border: #ddd6fe; }
+
+/* PATTERNS */
+.pattern-dots { background-image: radial-gradient(circle, var(--border) 1px, transparent 1px); background-size: 20px 20px; }
+.pattern-hearts { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ctext x='10' y='25' font-size='20' opacity='0.08'%3E💗%3C/text%3E%3C/svg%3E"); }
+.pattern-stars { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ctext x='5' y='28' font-size='22' opacity='0.08'%3E⭐%3C/text%3E%3C/svg%3E"); }
+.pattern-waves { background: repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(192,132,252,0.05) 10px,rgba(192,132,252,0.05) 20px); }
+.pattern-grid { background-image: linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px); background-size: 30px 30px; }
+.pattern-circles { background-image: radial-gradient(circle at 50% 50%,var(--border) 0,var(--border) 8px,transparent 8px,transparent 50%); background-size: 40px 40px; }
+.pattern-baby { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ctext x='5' y='30' font-size='20' opacity='0.07'%3E👶%3C/text%3E%3C/svg%3E"); }
+.pattern-pregnancy { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ctext x='5' y='30' font-size='20' opacity='0.07'%3E🤰%3C/text%3E%3C/svg%3E"); }
+.pattern-bear { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ctext x='5' y='30' font-size='20' opacity='0.07'%3E🧸%3C/text%3E%3C/svg%3E"); }
+.pattern-balloon { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ctext x='5' y='30' font-size='20' opacity='0.07'%3E🎈%3C/text%3E%3C/svg%3E"); }
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { height: 100%; overflow: hidden; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 0 auto;
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* HEADER */
+.header {
+  background: var(--gradient-header);
+  padding: 12px 16px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.header-sub {
+  color: rgba(255,255,255,0.85);
+  font-size: 11px;
+  font-weight: 500;
+}
+.header-right { display: flex; align-items: center; gap: 8px; }
+.btn-icon {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(10px);
+  transition: background 0.2s;
+}
+.btn-icon:active { background: rgba(255,255,255,0.35); }
+
+/* WEEK BADGE */
+.week-badge {
+  background: rgba(255,255,255,0.25);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.tab-content { display: none; padding: 16px; min-height: 100%; }
+.tab-content.active { display: block; }
+
+/* BOTTOM NAV */
+.bottom-nav {
+  display: flex;
+  background: white;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+  padding: 4px 0 env(safe-area-inset-bottom, 0);
+  z-index: 10;
+  box-shadow: 0 -4px 20px rgba(147,82,211,0.1);
+}
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  background: none;
+  gap: 2px;
+}
+.nav-item .nav-icon { font-size: 20px; transition: transform 0.2s; }
+.nav-item .nav-label { font-size: 9px; font-weight: 600; color: var(--text-light); font-family: 'Nunito', sans-serif; }
+.nav-item.active .nav-icon { transform: scale(1.15); }
+.nav-item.active .nav-label { color: var(--purple-dark); font-weight: 700; }
+
+/* CARDS */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* FORM ELEMENTS */
+.form-group { margin-bottom: 14px; }
+.form-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  display: block;
+}
+input[type="text"], input[type="number"], input[type="date"],
+textarea, select {
+  width: 100%;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(192,132,252,0.15);
+}
+textarea { resize: none; min-height: 80px; }
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+}
+.btn-primary {
+  background: var(--gradient-header);
+  color: white;
+  box-shadow: 0 4px 15px rgba(147,51,234,0.3);
+  width: 100%;
+}
+.btn-primary:active { transform: scale(0.98); box-shadow: none; }
+.btn-secondary {
+  background: var(--bg);
+  color: var(--purple-dark);
+  border: 1.5px solid var(--border);
+}
+.btn-danger { background: #fee2e2; color: #dc2626; border: 1.5px solid #fca5a5; }
+.btn-sm { padding: 7px 14px; font-size: 12px; border-radius: 10px; }
+
+/* STAR RATING */
+.star-row { display: flex; align-items: center; gap: 4px; }
+.star { font-size: 22px; cursor: pointer; transition: transform 0.15s; user-select: none; opacity: 0.3; }
+.star.active { opacity: 1; }
+.star:hover { transform: scale(1.2); }
+.rating-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.rating-item:last-child { border-bottom: none; }
+.rating-label { font-size: 13px; font-weight: 600; color: var(--text); }
+
+/* CALENDAR */
+.calendar-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 3px; }
+.cal-header { display: grid; grid-template-columns: repeat(7,1fr); gap: 3px; margin-bottom: 4px; }
+.cal-day-name { text-align: center; font-size: 10px; font-weight: 700; color: var(--text-light); padding: 4px 0; }
+.cal-day {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  overflow: hidden;
+}
+.cal-day:hover { background: var(--border); }
+.cal-day.today { border: 2px solid var(--purple-dark); font-weight: 800; }
+.cal-day.other-month { color: var(--border); }
+.cal-day.has-log { background: rgba(192,132,252,0.2); }
+.cal-day.has-photo { background: rgba(74,222,128,0.2); }
+.cal-day.has-note { background: rgba(251,191,36,0.2); }
+.cal-day.has-log.has-photo { background: conic-gradient(rgba(192,132,252,0.3) 50%,rgba(74,222,128,0.3) 50%); }
+.cal-day.has-log.has-note { background: conic-gradient(rgba(192,132,252,0.3) 50%,rgba(251,191,36,0.3) 50%); }
+.cal-day.has-photo.has-note { background: conic-gradient(rgba(74,222,128,0.3) 50%,rgba(251,191,36,0.3) 50%); }
+.cal-day.has-log.has-photo.has-note { background: conic-gradient(rgba(192,132,252,0.3) 33%,rgba(74,222,128,0.3) 33%,rgba(74,222,128,0.3) 66%,rgba(251,191,36,0.3) 66%); }
+.cal-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.cal-month-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; }
+
+/* STATS */
+.stat-bar-row { margin-bottom: 12px; }
+.stat-bar-label { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+.stat-bar-track { background: var(--border); border-radius: 10px; height: 10px; overflow: hidden; }
+.stat-bar-fill { height: 100%; border-radius: 10px; background: var(--gradient-header); transition: width 0.8s cubic-bezier(0.34,1.56,0.64,1); }
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.stat-box { background: var(--bg); border-radius: var(--radius-sm); padding: 12px; border: 1.5px solid var(--border); text-align: center; }
+.stat-box .val { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--purple-dark); }
+.stat-box .lbl { font-size: 11px; color: var(--text-light); font-weight: 600; margin-top: 2px; }
+
+/* PROFILE */
+.profile-header { text-align: center; margin-bottom: 16px; }
+.profile-avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--gradient);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px;
+  margin: 0 auto 10px;
+  box-shadow: var(--shadow);
+}
+.profile-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; }
+.profile-sub { color: var(--text-light); font-size: 13px; }
+.profile-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.profile-row:last-child { border-bottom: none; }
+.profile-row .key { font-size: 13px; color: var(--text-light); font-weight: 600; }
+.profile-row .val { font-size: 13px; font-weight: 700; }
+
+/* GALLERY */
+.sub-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.sub-tab { flex: 1; padding: 10px; border-radius: var(--radius-sm); border: 1.5px solid var(--border); background: var(--bg); font-size: 13px; font-weight: 700; cursor: pointer; text-align: center; transition: all 0.2s; color: var(--text-light); font-family: 'Nunito', sans-serif; }
+.sub-tab.active { background: var(--gradient-header); color: white; border-color: transparent; box-shadow: var(--shadow); }
+
+.photo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; }
+.photo-thumb {
+  aspect-ratio: 1; border-radius: 10px; overflow: hidden; cursor: pointer; position: relative;
+  background: var(--border);
+}
+.photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.photo-thumb .photo-date {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.5); color: white; font-size: 9px;
+  padding: 3px 5px; font-weight: 600;
+}
+
+.album-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-bottom: 14px; }
+.album-card {
+  background: var(--card); border-radius: var(--radius-sm); padding: 14px;
+  border: 1.5px solid var(--border); cursor: pointer; text-align: center;
+  transition: all 0.2s; position: relative;
+}
+.album-card:active { transform: scale(0.97); }
+.album-icon { font-size: 32px; margin-bottom: 6px; }
+.album-name { font-size: 13px; font-weight: 700; color: var(--text); }
+.album-count { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+
+.pdf-item { display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg); border-radius: var(--radius-sm); margin-bottom: 8px; border: 1.5px solid var(--border); }
+.pdf-name { font-size: 13px; font-weight: 600; flex: 1; margin-right: 8px; }
+.pdf-actions { display: flex; gap: 6px; }
+
+/* AI TAB */
+.ai-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 14px;
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.ai-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--purple-dark);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ai-text { font-size: 13px; line-height: 1.7; color: var(--text); }
+.fruit-card {
+  background: var(--gradient);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.fruit-emoji { font-size: 56px; margin-bottom: 8px; }
+.fruit-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: white; }
+.fruit-sub { color: rgba(255,255,255,0.85); font-size: 13px; margin-top: 4px; }
+
+.loading-dots { display: inline-flex; gap: 4px; padding: 20px 0; justify-content: center; width: 100%; }
+.loading-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--purple); animation: bounce 1.2s infinite; }
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes bounce { 0%,80%,100%{transform:scale(0.8);opacity:0.5} 40%{transform:scale(1.2);opacity:1} }
+
+/* MODAL */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(45,27,78,0.5);
+  display: none; align-items: flex-end; justify-content: center;
+  z-index: 100; backdrop-filter: blur(4px);
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: white; border-radius: 24px 24px 0 0;
+  width: 100%; max-width: 480px;
+  max-height: 85dvh; overflow-y: auto;
+  padding: 0 0 env(safe-area-inset-bottom,16px) 0;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+.modal-overlay.open .modal { transform: translateY(0); }
+.modal-handle { width: 36px; height: 4px; background: var(--border); border-radius: 2px; margin: 12px auto; }
+.modal-header { padding: 0 16px 12px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+.modal-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; }
+.modal-body { padding: 16px; }
+.modal-close { font-size: 20px; cursor: pointer; color: var(--text-light); border: none; background: none; }
+
+/* SETTINGS DRAWER */
+.drawer-overlay {
+  position: fixed; inset: 0; background: rgba(45,27,78,0.4);
+  display: none; z-index: 200; backdrop-filter: blur(4px);
+}
+.drawer-overlay.open { display: block; }
+.drawer {
+  position: fixed; top: 0; right: -100%; bottom: 0;
+  width: 85%; max-width: 360px;
+  background: white; z-index: 201;
+  transition: right 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  overflow-y: auto;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+.drawer.open { right: 0; }
+.drawer-header { background: var(--gradient-header); padding: 40px 20px 16px; }
+.drawer-header h2 { font-family: 'Playfair Display', serif; color: white; font-size: 20px; font-weight: 700; }
+.drawer-section { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.drawer-section-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-bottom: 12px; }
+.drawer-menu-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px; border-radius: var(--radius-sm);
+  cursor: pointer; transition: background 0.15s;
+  border: none; background: none; width: 100%; text-align: left;
+  font-family: 'Nunito', sans-serif;
+}
+.drawer-menu-item:hover { background: var(--bg); }
+.drawer-menu-item .icon { font-size: 18px; }
+.drawer-menu-item .label { font-size: 14px; font-weight: 600; color: var(--text); }
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+  display: none; align-items: center; justify-content: center;
+  z-index: 300; flex-direction: column;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 12px; }
+.lightbox-footer { color: rgba(255,255,255,0.7); font-size: 13px; margin-top: 12px; }
+.lightbox-close { position: absolute; top: 16px; right: 16px; color: white; font-size: 28px; cursor: pointer; background: none; border: none; }
+.lightbox-del { position: absolute; bottom: 20px; right: 20px; }
+
+/* TOAST */
+.toast {
+  position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(20px);
+  background: var(--text); color: white;
+  padding: 10px 20px; border-radius: 20px;
+  font-size: 13px; font-weight: 600;
+  opacity: 0; transition: all 0.3s;
+  z-index: 400; white-space: nowrap;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* CONFIRM */
+.confirm-overlay {
+  position: fixed; inset: 0; background: rgba(45,27,78,0.5);
+  display: none; align-items: center; justify-content: center;
+  z-index: 500; backdrop-filter: blur(4px); padding: 20px;
+}
+.confirm-overlay.open { display: flex; }
+.confirm-box {
+  background: white; border-radius: var(--radius); padding: 24px;
+  width: 100%; max-width: 320px; text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+.confirm-box h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 8px; }
+.confirm-box p { font-size: 13px; color: var(--text-light); margin-bottom: 20px; line-height: 1.5; }
+.confirm-actions { display: flex; gap: 10px; }
+
+/* THEME GRID */
+.theme-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; margin-bottom: 12px; }
+.theme-dot {
+  aspect-ratio: 1; border-radius: 50%; cursor: pointer;
+  border: 3px solid transparent; transition: all 0.2s;
+}
+.theme-dot.active { border-color: var(--text); transform: scale(1.15); box-shadow: 0 0 0 2px white, 0 0 0 4px var(--text); }
+.pattern-list { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; }
+.pattern-btn {
+  aspect-ratio: 1; border-radius: 10px; cursor: pointer;
+  border: 2px solid var(--border); transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; background: var(--bg);
+}
+.pattern-btn.active { border-color: var(--purple-dark); background: rgba(192,132,252,0.1); }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* HELPER */
+.flex-row { display: flex; gap: 10px; align-items: center; }
+.mt-8 { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+.color-legend { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; color: var(--text-light); }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+.empty-state { text-align: center; padding: 32px 16px; color: var(--text-light); }
+.empty-state .emoji { font-size: 48px; margin-bottom: 12px; }
+.empty-state p { font-size: 14px; font-weight: 600; }
+.empty-state small { font-size: 12px; }
+
+/* SETTINGS INNER PANELS */
+.settings-panel { display: none; }
+.settings-panel.active { display: block; }
+
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700;
+  border: 1.5px solid var(--border); background: var(--bg); cursor: pointer;
+  transition: all 0.2s; font-family: 'Nunito', sans-serif; color: var(--text);
+}
+.chip.active { background: var(--gradient-header); color: white; border-color: transparent; }
+
+.input-with-unit { position: relative; }
+.input-with-unit input { padding-right: 40px; }
+.input-unit { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 12px; font-weight: 700; color: var(--text-light); }
+
+@media (min-height: 750px) {
+  .tab-content { padding: 20px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+  <div>
+    <h1>🌸 Şeymoş'un Hamilelik Günlüğü</h1>
+    <div class="header-sub" id="headerSub">Yükleniyor...</div>
+  </div>
+  <div class="header-right">
+    <div class="week-badge" id="weekBadge">— . hafta</div>
+    <button class="btn-icon" onclick="openDrawer()">⚙️</button>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+
+<div class="content" id="mainContent">
+
+  <!-- TAB 1: GÜNLÜK -->
+
+  <div class="tab-content active" id="tab-gunluk">
+    <div class="card">
+      <div class="card-title">📅 Günlük Kayıt</div>
+      <div class="form-group">
+        <label class="form-label">Tarih</label>
+        <input type="date" id="logDate">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Güncel Kilo</label>
+        <div class="input-with-unit">
+          <input type="number" id="logWeight" placeholder="0.0" step="0.1">
+          <span class="input-unit">kg</span>
+        </div>
+      </div>
+    </div>
+
+```
+<div class="card">
+  <div class="card-title">🥗 Beslenme</div>
+  <textarea id="logNutrition" placeholder="Bugün ne yediniz? Su içtiniz mi? Vitamin aldınız mı?..."></textarea>
+</div>
+
+<div class="card">
+  <div class="card-title">🏃 Hareket / Spor</div>
+  <textarea id="logExercise" placeholder="Yürüyüş, yoga, yüzme... Ne kadar süre?..."></textarea>
+</div>
+
+<div class="card">
+  <div class="card-title">💭 Fiziksel & Ruhsal Hissiyat</div>
+  <textarea id="logFeeling" placeholder="Bugün nasıl hissettiniz? Ağrı, bulantı, mutluluk, kaygı..."></textarea>
+</div>
+
+<div class="card">
+  <div class="card-title">⭐ Değerlendirme</div>
+  <div id="ratingContainer">
+    <div class="rating-item">
+      <span class="rating-label">🥗 Beslenme</span>
+      <div class="star-row" data-cat="nutrition">
+        <span class="star" data-val="1">⭐</span><span class="star" data-val="2">⭐</span><span class="star" data-val="3">⭐</span><span class="star" data-val="4">⭐</span><span class="star" data-val="5">⭐</span>
+      </div>
+    </div>
+    <div class="rating-item">
+      <span class="rating-label">🏃 Hareket</span>
+      <div class="star-row" data-cat="exercise">
+        <span class="star" data-val="1">⭐</span><span class="star" data-val="2">⭐</span><span class="star" data-val="3">⭐</span><span class="star" data-val="4">⭐</span><span class="star" data-val="5">⭐</span>
+      </div>
+    </div>
+    <div class="rating-item">
+      <span class="rating-label">💪 Fiziksel Durum</span>
+      <div class="star-row" data-cat="physical">
+        <span class="star" data-val="1">⭐</span><span class="star" data-val="2">⭐</span><span class="star" data-val="3">⭐</span><span class="star" data-val="4">⭐</span><span class="star" data-val="5">⭐</span>
+      </div>
+    </div>
+    <div class="rating-item">
+      <span class="rating-label">🧘 Ruhsal Durum</span>
+      <div class="star-row" data-cat="mental">
+        <span class="star" data-val="1">⭐</span><span class="star" data-val="2">⭐</span><span class="star" data-val="3">⭐</span><span class="star" data-val="4">⭐</span><span class="star" data-val="5">⭐</span>
+      </div>
+    </div>
+    <div class="rating-item">
+      <span class="rating-label">👶 Bebek Hareketi</span>
+      <div class="star-row" data-cat="baby">
+        <span class="star" data-val="1">⭐</span><span class="star" data-val="2">⭐</span><span class="star" data-val="3">⭐</span><span class="star" data-val="4">⭐</span><span class="star" data-val="5">⭐</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-primary" onclick="saveLog()">💾 Kaydet</button>
+<div style="height:16px"></div>
+```
+
+  </div>
+
+  <!-- TAB 2: TAKVİM -->
+
+  <div class="tab-content" id="tab-takvim">
+    <div class="card">
+      <div class="cal-nav">
+        <button class="btn btn-secondary btn-sm" onclick="changeMonth(-1)">‹</button>
+        <span class="cal-month-title" id="calMonthTitle"></span>
+        <button class="btn btn-secondary btn-sm" onclick="changeMonth(1)">›</button>
+      </div>
+      <div class="color-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:rgba(192,132,252,0.6)"></div>Kayıt</div>
+        <div class="legend-item"><div class="legend-dot" style="background:rgba(74,222,128,0.6)"></div>Fotoğraf</div>
+        <div class="legend-item"><div class="legend-dot" style="background:rgba(251,191,36,0.6)"></div>Not</div>
+      </div>
+      <div class="cal-header">
+        <div class="cal-day-name">Pzt</div><div class="cal-day-name">Sal</div>
+        <div class="cal-day-name">Çar</div><div class="cal-day-name">Per</div>
+        <div class="cal-day-name">Cum</div><div class="cal-day-name">Cmt</div>
+        <div class="cal-day-name">Paz</div>
+      </div>
+      <div class="calendar-grid" id="calGrid"></div>
+    </div>
+  </div>
+
+  <!-- TAB 3: İSTATİSTİK -->
+
+  <div class="tab-content" id="tab-istatistik">
+    <div class="card">
+      <div class="card-title">📊 Kategori Ortalamaları</div>
+      <div id="statsCharts"></div>
+    </div>
+    <div class="stat-grid" id="statsGrid"></div>
+    <div class="card" id="weightStats"></div>
+  </div>
+
+  <!-- TAB 4: PROFİL -->
+
+  <div class="tab-content" id="tab-profil">
+    <div class="card">
+      <div class="profile-header">
+        <div class="profile-avatar">🤰</div>
+        <div class="profile-name" id="profileName">Adınız</div>
+        <div class="profile-sub" id="profileSub">Profil henüz doldurulmadı</div>
+      </div>
+      <div id="profileInfo"></div>
+      <button class="btn btn-secondary mt-12" onclick="openProfileEdit()" style="width:100%">✏️ Profili Düzenle</button>
+    </div>
+  </div>
+
+  <!-- TAB 5: GALERİ -->
+
+  <div class="tab-content" id="tab-galeri">
+    <div class="sub-tabs">
+      <button class="sub-tab active" onclick="switchGalleryTab('photos',this)">📷 Fotoğraflar</button>
+      <button class="sub-tab" onclick="switchGalleryTab('pdfs',this)">📄 Tahliller</button>
+    </div>
+
+```
+<div id="galleryPhotos">
+  <div class="flex-row" style="margin-bottom:12px">
+    <button class="btn btn-primary" onclick="openAddPhotoModal()" style="flex:1">📷 Fotoğraf Ekle</button>
+    <button class="btn btn-secondary" onclick="openAlbumManager()">📁</button>
+  </div>
+  <div id="albumTabs" class="chip-row" style="margin-bottom:12px"></div>
+  <div class="photo-grid" id="photoGrid"></div>
+</div>
+
+<div id="galleryPdfs" style="display:none">
+  <div class="flex-row" style="margin-bottom:12px">
+    <label class="btn btn-primary" style="flex:1;cursor:pointer">📄 PDF Ekle <input type="file" accept=".pdf" id="pdfInput" style="display:none" onchange="addPDF(this)"></label>
+  </div>
+  <div id="pdfList"></div>
+</div>
+```
+
+  </div>
+
+  <!-- TAB 6: AI -->
+
+  <div class="tab-content" id="tab-ai">
+    <div id="aiContent">
+      <div class="fruit-card">
+        <div class="fruit-emoji" id="fruitEmoji">🍇</div>
+        <div class="fruit-title" id="fruitTitle">Bebeğiniz bu hafta...</div>
+        <div class="fruit-sub" id="fruitSub">AI değerlendirmesi için butona tıklayın</div>
+      </div>
+      <button class="btn btn-primary" onclick="runAI()" id="aiBtn">🤖 AI Değerlendirme Yap</button>
+      <div id="aiResult" style="margin-top:14px"></div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+
+<nav class="bottom-nav">
+  <button class="nav-item active" data-tab="gunluk">
+    <span class="nav-icon">📝</span><span class="nav-label">Günlük</span>
+  </button>
+  <button class="nav-item" data-tab="takvim">
+    <span class="nav-icon">📅</span><span class="nav-label">Takvim</span>
+  </button>
+  <button class="nav-item" data-tab="istatistik">
+    <span class="nav-icon">📊</span><span class="nav-label">İstatistik</span>
+  </button>
+  <button class="nav-item" data-tab="profil">
+    <span class="nav-icon">👤</span><span class="nav-label">Profil</span>
+  </button>
+  <button class="nav-item" data-tab="galeri">
+    <span class="nav-icon">🖼️</span><span class="nav-label">Galeri</span>
+  </button>
+  <button class="nav-item" data-tab="ai">
+    <span class="nav-icon">🤖</span><span class="nav-label">AI</span>
+  </button>
+</nav>
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+<!-- SETTINGS DRAWER -->
+
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <h2>⚙️ Ayarlar</h2>
+  </div>
+
+  <div class="drawer-section">
+    <div class="drawer-section-title">Menü</div>
+    <button class="drawer-menu-item" onclick="showSettingsPanel('apikey')"><span class="icon">🔑</span><span class="label">API Anahtarları</span></button>
+    <button class="drawer-menu-item" onclick="showSettingsPanel('theme')"><span class="icon">🎨</span><span class="label">Tema & Desen</span></button>
+    <button class="drawer-menu-item" onclick="showSettingsPanel('data')"><span class="icon">🗑️</span><span class="label">Profil & Veriler</span></button>
+  </div>
+
+  <div class="drawer-section">
+    <!-- API KEY PANEL -->
+    <div class="settings-panel active" id="panel-apikey">
+      <div class="drawer-section-title">API Anahtarları</div>
+      <div class="form-group">
+        <label class="form-label">Firebase API Key</label>
+        <input type="text" id="settFirebaseKey" placeholder="AIza...">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Firebase Auth Domain</label>
+        <input type="text" id="settFirebaseAuth" placeholder="proje.firebaseapp.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Firebase Project ID</label>
+        <input type="text" id="settFirebaseProject" placeholder="proje-id">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Claude (Anthropic) API Key</label>
+        <input type="text" id="settClaudeKey" placeholder="sk-ant-...">
+      </div>
+      <button class="btn btn-primary mt-8" onclick="saveApiSettings()">💾 Kaydet</button>
+    </div>
+
+```
+<!-- THEME PANEL -->
+<div class="settings-panel" id="panel-theme">
+  <div class="drawer-section-title">Renk Teması</div>
+  <div class="theme-grid">
+    <div class="theme-dot active" style="background:linear-gradient(135deg,#ec4899,#9333ea,#3b82f6)" data-theme="" onclick="applyTheme('',this)" title="Mor-Pembe"></div>
+    <div class="theme-dot" style="background:linear-gradient(135deg,#e11d48,#be123c)" data-theme="rose" onclick="applyTheme('rose',this)" title="Gül"></div>
+    <div class="theme-dot" style="background:linear-gradient(135deg,#0284c7,#1d4ed8)" data-theme="ocean" onclick="applyTheme('ocean',this)" title="Okyanus"></div>
+    <div class="theme-dot" style="background:linear-gradient(135deg,#16a34a,#166534)" data-theme="sage" onclick="applyTheme('sage',this)" title="Adaçayı"></div>
+    <div class="theme-dot" style="background:linear-gradient(135deg,#ea580c,#c2410c)" data-theme="peach" onclick="applyTheme('peach',this)" title="Şeftali"></div>
+  </div>
+  <div class="drawer-section-title" style="margin-top:12px">Arka Plan Deseni</div>
+  <div class="pattern-list">
+    <button class="pattern-btn active" data-pattern="" onclick="applyPattern('',this)">✕</button>
+    <button class="pattern-btn" data-pattern="dots" onclick="applyPattern('dots',this)">⚬</button>
+    <button class="pattern-btn" data-pattern="waves" onclick="applyPattern('waves',this)">≋</button>
+    <button class="pattern-btn" data-pattern="grid" onclick="applyPattern('grid',this)">⊞</button>
+    <button class="pattern-btn" data-pattern="circles" onclick="applyPattern('circles',this)">◎</button>
+    <button class="pattern-btn" data-pattern="baby" onclick="applyPattern('baby',this)">👶</button>
+    <button class="pattern-btn" data-pattern="pregnancy" onclick="applyPattern('pregnancy',this)">🤰</button>
+    <button class="pattern-btn" data-pattern="bear" onclick="applyPattern('bear',this)">🧸</button>
+    <button class="pattern-btn" data-pattern="balloon" onclick="applyPattern('balloon',this)">🎈</button>
+    <button class="pattern-btn" data-pattern="hearts" onclick="applyPattern('hearts',this)">💗</button>
+  </div>
+</div>
+
+<!-- DATA PANEL -->
+<div class="settings-panel" id="panel-data">
+  <div class="drawer-section-title">Veri Sıfırlama</div>
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <button class="btn btn-danger btn-sm" onclick="confirmReset('profile')">👤 Kişisel Bilgileri Sıfırla</button>
+    <button class="btn btn-danger btn-sm" onclick="confirmReset('logs')">📝 Günlük Kayıtları Sil</button>
+    <button class="btn btn-danger btn-sm" onclick="confirmReset('notes')">📌 Notları Sil</button>
+    <button class="btn btn-danger btn-sm" onclick="confirmReset('photos')">📷 Fotoğrafları Sil</button>
+    <button class="btn btn-danger btn-sm" onclick="confirmReset('all')">⚠️ Tüm Verileri Sil</button>
+  </div>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- CALENDAR DAY MODAL -->
+
+<div class="modal-overlay" id="calModal">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <div class="modal-title" id="calModalTitle">Gün Detayı</div>
+      <button class="modal-close" onclick="closeModal('calModal')">✕</button>
+    </div>
+    <div class="modal-body" id="calModalBody"></div>
+  </div>
+</div>
+
+<!-- DAY NOTE MODAL -->
+
+<div class="modal-overlay" id="dayNoteModal">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <div class="modal-title">📌 Günün Olayı</div>
+      <button class="modal-close" onclick="closeModal('dayNoteModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-title" id="dayNoteTitle" style="font-size:13px;color:var(--text-light);margin-bottom:12px;font-family:'Nunito',sans-serif;font-weight:600"></div>
+      <div class="form-group">
+        <textarea id="dayNoteText" placeholder="Bugün ne oldu? Özel bir an, doktor ziyareti, bebek hareketi..." style="min-height:120px"></textarea>
+      </div>
+      <div style="display:flex;gap:10px">
+        <button class="btn btn-danger btn-sm" onclick="clearDayNote()" id="dayNoteClearBtn" style="display:none">🗑️ Sil</button>
+        <button class="btn btn-primary" onclick="saveDayNote()" style="flex:1">💾 Kaydet</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADD PHOTO MODAL -->
+
+<div class="modal-overlay" id="photoModal">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <div class="modal-title">📷 Fotoğraf Ekle</div>
+      <button class="modal-close" onclick="closeModal('photoModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">Tarih</label>
+        <input type="date" id="photoDate">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Albüm</label>
+        <select id="photoAlbum"></select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Fotoğraflar (max 5)</label>
+        <input type="file" accept="image/*" multiple id="photoFiles" style="font-size:13px">
+      </div>
+      <button class="btn btn-primary mt-8" onclick="uploadPhotos()">📤 Yükle</button>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE EDIT MODAL -->
+
+<div class="modal-overlay" id="profileModal">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <div class="modal-title">✏️ Profil Düzenle</div>
+      <button class="modal-close" onclick="closeModal('profileModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">Anne Adı</label>
+        <input type="text" id="pName" placeholder="Adınız">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Yaş</label>
+        <input type="number" id="pAge" placeholder="25">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Boy (cm)</label>
+        <input type="number" id="pHeight" placeholder="165">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Gebelik Başlangıç Tarihi</label>
+        <input type="date" id="pStart" onchange="calcDueDate()">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tahmini Doğum Tarihi</label>
+        <input type="date" id="pDue">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Bebek Cinsiyeti</label>
+        <select id="pGender">
+          <option value="">Bilinmiyor</option>
+          <option value="kız">Kız 👧</option>
+          <option value="erkek">Erkek 👦</option>
+        </select>
+      </div>
+      <button class="btn btn-primary mt-8" onclick="saveProfile()">💾 Kaydet</button>
+    </div>
+  </div>
+</div>
+
+<!-- ALBUM MANAGER MODAL -->
+
+<div class="modal-overlay" id="albumModal">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <div class="modal-title">📁 Albümler</div>
+      <button class="modal-close" onclick="closeModal('albumModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">Yeni Albüm Adı</label>
+        <div class="flex-row">
+          <input type="text" id="newAlbumName" placeholder="Albüm adı..." style="flex:1">
+          <select id="newAlbumIcon" style="width:80px">
+            <option>🌸</option><option>👶</option><option>🤰</option><option>🧸</option>
+            <option>🎈</option><option>💗</option><option>⭐</option><option>🌙</option>
+            <option>🌈</option><option>🍀</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-primary mt-8" onclick="createAlbum()" style="margin-bottom:16px">➕ Oluştur</button>
+      <div id="albumList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-footer" id="lightboxFooter"></div>
+  <div class="lightbox-del">
+    <button class="btn btn-danger btn-sm" onclick="deleteCurrentPhoto()">🗑️ Sil</button>
+  </div>
+</div>
+
+<!-- CONFIRM DIALOG -->
+
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-box">
+    <h3 id="confirmTitle">Emin misiniz?</h3>
+    <p id="confirmText">Bu işlem geri alınamaz.</p>
+    <div class="confirm-actions">
+      <button class="btn btn-secondary" style="flex:1" onclick="closeConfirm()">İptal</button>
+      <button class="btn btn-danger" style="flex:1" id="confirmOkBtn">Sil</button>
+    </div>
+  </div>
+</div>
+
+<!-- Firebase Compat SDK (works without ES modules) -->
+
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+<script>
+// ==================== STATE ====================
+var db = null;
+var claudeApiKey = '';
+var profile = {};
+var logs = {};
+var notes = {};
+var albums = [];
+var photos = [];
+var pdfs = [];
+var currentCalMonth = new Date().getMonth();
+var currentCalYear = new Date().getFullYear();
+var currentLogRatings = { nutrition:0, exercise:0, physical:0, mental:0, baby:0 };
+var currentGalleryAlbum = 'all';
+var lightboxPhotoId = null;
+var currentTheme = '';
+var currentPattern = '';
+var pendingConfirmAction = null;
+
+// ==================== INIT ====================
+document.addEventListener('DOMContentLoaded', function() {
+  // Wire nav buttons
+  document.querySelectorAll('.nav-item[data-tab]').forEach(function(btn) {
+    btn.addEventListener('click', function() { switchTab(btn.dataset.tab, btn); });
+  });
+
+  loadLocalSettings();
+  loadPhotosFromIDB().then(function() {
+    loadPDFs();
+    loadAlbums();
+    initFirebase();
+    initLogDate();
+    initStarRatings();
+    renderCalendar();
+    updateHeader();
+    renderStats();
+    renderProfile();
+    renderGallery();
+    renderPDFs();
+  });
+});
+
+// ==================== FIREBASE ====================
+function initFirebase() {
+  var saved = localStorage.getItem('hg_firebase');
+  if (!saved) { updateHeader(); return; }
+  try {
+    var config = JSON.parse(saved);
+    var app = firebase.apps.length ? firebase.apps[0] : firebase.initializeApp(config);
+    db = firebase.firestore(app);
+    loadFirebaseData();
+  } catch(e) {
+    console.warn('Firebase init error:', e);
+    updateHeader();
+  }
+}
+
+function loadFirebaseData() {
+  if (!db) return;
+  // Load profile
+  db.doc('data/profile').get().then(function(d) {
+    if (d.exists) profile = d.data();
+    updateHeader();
+    renderProfile();
+  }).catch(function(){});
+
+  // Load settings
+  db.doc('data/settings').get().then(function(d) {
+    if (d.exists && d.data().claudeKey) claudeApiKey = d.data().claudeKey;
+  }).catch(function(){});
+
+  // Load notes
+  db.doc('data/notes').get().then(function(d) {
+    if (d.exists) notes = d.data();
+    renderCalendar();
+  }).catch(function(){});
+
+  // Load logs
+  db.collection('logs').get().then(function(snap) {
+    logs = {};
+    snap.forEach(function(doc) { logs[doc.id] = doc.data(); });
+    renderCalendar();
+    renderStats();
+    renderProfile();
+  }).catch(function(){});
+
+  showToast('🔥 Firebase bağlandı!');
+}
+
+function saveToFirebase(collPath, docId, data) {
+  if (!db) return Promise.resolve();
+  return db.doc(collPath + '/' + docId).set(data, { merge: true }).catch(function(e){ console.warn(e); });
+}
+
+function deleteFromFirebase(collPath, docId) {
+  if (!db) return Promise.resolve();
+  return db.doc(collPath + '/' + docId).delete().catch(function(e){ console.warn(e); });
+}
+
+// ==================== HEADER ====================
+function updateHeader() {
+  var sub = document.getElementById('headerSub');
+  var badge = document.getElementById('weekBadge');
+  if (profile.startDate) {
+    var start = new Date(profile.startDate);
+    var now = new Date();
+    var weeks = Math.floor((now - start) / (7*24*60*60*1000));
+    sub.textContent = profile.name ? ('Merhaba, ' + profile.name + '! 🌸') : "🌸 Şeymoş'un Hamilelik Günlüğü";
+    badge.textContent = weeks + '. hafta';
+  } else {
+    sub.textContent = 'Profilinizi doldurun ✨';
+    badge.textContent = '— . hafta';
+  }
+}
+
+// ==================== LOG ====================
+function initLogDate() {
+  var d = document.getElementById('logDate');
+  d.value = today();
+  d.addEventListener('change', loadExistingLog);
+  loadExistingLog();
+}
+
+function loadExistingLog() {
+  var date = document.getElementById('logDate').value;
+  var log = logs[date];
+  if (log) {
+    document.getElementById('logWeight').value = log.weight || '';
+    document.getElementById('logNutrition').value = log.nutrition || '';
+    document.getElementById('logExercise').value = log.exercise || '';
+    document.getElementById('logFeeling').value = log.feeling || '';
+    currentLogRatings = log.ratings || { nutrition:0, exercise:0, physical:0, mental:0, baby:0 };
+  } else {
+    document.getElementById('logWeight').value = '';
+    document.getElementById('logNutrition').value = '';
+    document.getElementById('logExercise').value = '';
+    document.getElementById('logFeeling').value = '';
+    currentLogRatings = { nutrition:0, exercise:0, physical:0, mental:0, baby:0 };
+  }
+  renderStarRatings();
+}
+
+function saveLog() {
+  var date = document.getElementById('logDate').value;
+  if (!date) { showToast('⚠️ Tarih seçin'); return; }
+  var entry = {
+    date: date,
+    weight: parseFloat(document.getElementById('logWeight').value) || null,
+    nutrition: document.getElementById('logNutrition').value.trim(),
+    exercise: document.getElementById('logExercise').value.trim(),
+    feeling: document.getElementById('logFeeling').value.trim(),
+    ratings: Object.assign({}, currentLogRatings),
+    savedAt: new Date().toISOString()
+  };
+  logs[date] = entry;
+  saveToFirebase('logs', date, entry);
+  renderCalendar();
+  renderStats();
+  renderProfile();
+  showToast('✅ Kaydedildi!');
+}
+
+// ==================== STAR RATINGS ====================
+function initStarRatings() {
+  document.querySelectorAll('.star-row').forEach(function(row) {
+    row.querySelectorAll('.star').forEach(function(star) {
+      star.addEventListener('click', function() {
+        var cat = row.dataset.cat;
+        var val = parseInt(star.dataset.val);
+        currentLogRatings[cat] = currentLogRatings[cat] === val ? 0 : val;
+        renderStarRatings();
+      });
+    });
+  });
+}
+
+function renderStarRatings() {
+  document.querySelectorAll('.star-row').forEach(function(row) {
+    var cat = row.dataset.cat;
+    var val = currentLogRatings[cat] || 0;
+    row.querySelectorAll('.star').forEach(function(star) {
+      star.classList.toggle('active', parseInt(star.dataset.val) <= val);
+    });
+  });
+}
+
+// ==================== CALENDAR ====================
+function changeMonth(dir) {
+  currentCalMonth += dir;
+  if (currentCalMonth > 11) { currentCalMonth = 0; currentCalYear++; }
+  if (currentCalMonth < 0) { currentCalMonth = 11; currentCalYear--; }
+  renderCalendar();
+}
+
+function renderCalendar() {
+  var grid = document.getElementById('calGrid');
+  var title = document.getElementById('calMonthTitle');
+  var months = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+  title.textContent = months[currentCalMonth] + ' ' + currentCalYear;
+
+  var firstDay = new Date(currentCalYear, currentCalMonth, 1);
+  var startDow = firstDay.getDay();
+  startDow = startDow === 0 ? 6 : startDow - 1;
+
+  var daysInMonth = new Date(currentCalYear, currentCalMonth+1, 0).getDate();
+  var todayStr = today();
+
+  grid.innerHTML = '';
+  var prevDays = new Date(currentCalYear, currentCalMonth, 0).getDate();
+  for (var i=0; i<startDow; i++) {
+    var el = document.createElement('div');
+    el.className = 'cal-day other-month';
+    el.textContent = prevDays - startDow + 1 + i;
+    grid.appendChild(el);
+  }
+
+  for (var d=1; d<=daysInMonth; d++) {
+    (function(day) {
+      var mm = String(currentCalMonth+1).padStart(2,'0');
+      var dd = String(day).padStart(2,'0');
+      var dateStr = currentCalYear + '-' + mm + '-' + dd;
+      var el = document.createElement('button');
+      el.className = 'cal-day';
+      el.textContent = day;
+      if (dateStr === todayStr) el.classList.add('today');
+      if (logs[dateStr]) el.classList.add('has-log');
+      if (notes[dateStr]) el.classList.add('has-note');
+      if (photos.some(function(p){ return p.date === dateStr; })) el.classList.add('has-photo');
+      el.onclick = function() { openCalModal(dateStr); };
+      grid.appendChild(el);
+    })(d);
+  }
+}
+
+function openCalModal(dateStr) {
+  var modal = document.getElementById('calModal');
+  var title = document.getElementById('calModalTitle');
+  var body = document.getElementById('calModalBody');
+  var d = new Date(dateStr + 'T12:00:00');
+  title.textContent = d.toLocaleDateString('tr-TR', { weekday:'long', day:'numeric', month:'long' });
+
+  var log = logs[dateStr];
+  var note = notes[dateStr];
+  var dayPhotos = photos.filter(function(p){ return p.date === dateStr; });
+  var html = '';
+
+  if (log) {
+    html += '<div class="card" style="margin-bottom:10px"><div class="card-title">📝 Günlük Kayıt</div>';
+    if (log.weight) html += '<p style="font-size:13px;margin-bottom:6px"><strong>⚖️ Kilo:</strong> ' + log.weight + ' kg</p>';
+    if (log.nutrition) html += '<p style="font-size:13px;margin-bottom:4px"><strong>🥗</strong> ' + log.nutrition + '</p>';
+    if (log.exercise) html += '<p style="font-size:13px;margin-bottom:4px"><strong>🏃</strong> ' + log.exercise + '</p>';
+    if (log.feeling) html += '<p style="font-size:13px"><strong>💭</strong> ' + log.feeling + '</p>';
+    html += '</div>';
+  }
+
+  if (note) {
+    html += '<div class="card" style="margin-bottom:10px;border-color:rgba(251,191,36,0.5)"><div class="card-title">📌 Günün Olayı</div><p style="font-size:13px">' + note + '</p></div>';
+  }
+
+  if (dayPhotos.length > 0) {
+    html += '<div class="card" style="margin-bottom:10px"><div class="card-title">📷 Fotoğraflar (' + dayPhotos.length + ')</div><div class="photo-grid">';
+    dayPhotos.forEach(function(p) {
+      html += '<div class="photo-thumb" onclick="openLightbox(\'' + p.id + '\')"><img src="' + p.data + '" loading="lazy"><div class="photo-date">' + p.date + '</div></div>';
+    });
+    html += '</div></div>';
+  }
+
+  html += '<div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">';
+  html += '<button class="btn btn-secondary" onclick="goToLogDate(\'' + dateStr + '\')">' + (log ? '📝 Kaydı Düzenle' : '📝 Kayıt Ekle') + '</button>';
+  html += '<button class="btn btn-secondary" onclick="openDayNote(\'' + dateStr + '\')">📌 ' + (note ? 'Notu Düzenle' : 'Günün Olayı Ekle') + '</button>';
+  html += '<button class="btn btn-secondary" onclick="openAddPhotoModal(\'' + dateStr + '\')">📷 Fotoğraf Ekle</button>';
+  html += '</div>';
+
+  body.innerHTML = html;
+  modal.classList.add('open');
+}
+
+function goToLogDate(date) {
+  closeModal('calModal');
+  document.getElementById('logDate').value = date;
+  loadExistingLog();
+  switchTabById('gunluk');
+}
+
+var _dayNoteDate = '';
+
+function openDayNote(dateStr) {
+  _dayNoteDate = dateStr;
+  var existing = notes[dateStr] || '';
+  var d = new Date(dateStr + 'T12:00:00');
+  document.getElementById('dayNoteTitle').textContent = d.toLocaleDateString('tr-TR', { weekday:'long', day:'numeric', month:'long' });
+  document.getElementById('dayNoteText').value = existing;
+  document.getElementById('dayNoteClearBtn').style.display = existing ? 'inline-flex' : 'none';
+  closeModal('calModal');
+  openModal('dayNoteModal');
+}
+
+function saveDayNote() {
+  var text = document.getElementById('dayNoteText').value.trim();
+  if (text) {
+    notes[_dayNoteDate] = text;
+  } else {
+    delete notes[_dayNoteDate];
+  }
+  saveToFirebase('data', 'notes', notes);
+  closeModal('dayNoteModal');
+  renderCalendar();
+  showToast('✅ Not kaydedildi!');
+  openCalModal(_dayNoteDate);
+}
+
+function clearDayNote() {
+  document.getElementById('dayNoteText').value = '';
+  document.getElementById('dayNoteClearBtn').style.display = 'none';
+}
+
+// ==================== STATS ====================
+function renderStats() {
+  var container = document.getElementById('statsCharts');
+  var cats = [
+    { key:'nutrition', label:'🥗 Beslenme' },
+    { key:'exercise', label:'🏃 Hareket' },
+    { key:'physical', label:'💪 Fiziksel' },
+    { key:'mental', label:'🧘 Ruhsal' },
+    { key:'baby', label:'👶 Bebek Hareketi' }
+  ];
+  var logArr = Object.values(logs);
+  var html = '';
+
+  cats.forEach(function(cat) {
+    var vals = logArr.map(function(l){ return l.ratings && l.ratings[cat.key] ? l.ratings[cat.key] : 0; }).filter(function(v){ return v > 0; });
+    var avg = vals.length ? vals.reduce(function(a,b){return a+b;},0)/vals.length : 0;
+    var pct = (avg/5)*100;
+    html += '<div class="stat-bar-row"><div class="stat-bar-label"><span>' + cat.label + '</span><span>' + avg.toFixed(1) + '/5</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="width:' + pct + '%"></div></div></div>';
+  });
+
+  if (!logArr.length) html = '<div class="empty-state"><div class="emoji">📊</div><p>Henüz kayıt yok</p></div>';
+  container.innerHTML = html;
+
+  var weights = logArr.map(function(l){ return l.weight; }).filter(Boolean);
+  var gridEl = document.getElementById('statsGrid');
+  var sorted = logArr.slice().sort(function(a,b){ return a.date > b.date ? -1 : 1; });
+  var lastDate = sorted.length ? new Date(sorted[0].date + 'T12:00').toLocaleDateString('tr-TR',{day:'numeric',month:'short'}) : '—';
+
+  gridEl.innerHTML = '<div class="stat-box"><div class="val">' + logArr.length + '</div><div class="lbl">Toplam Kayıt</div></div>' +
+    '<div class="stat-box"><div class="val">' + photos.length + '</div><div class="lbl">Fotoğraf</div></div>' +
+    '<div class="stat-box"><div class="val">' + lastDate + '</div><div class="lbl">Son Kayıt</div></div>' +
+    '<div class="stat-box"><div class="val">' + Object.keys(notes).length + '</div><div class="lbl">Not</div></div>';
+
+  var weightEl = document.getElementById('weightStats');
+  if (weights.length >= 2) {
+    var first = weights[0], last = weights[weights.length-1];
+    var diff = (last - first).toFixed(1);
+    weightEl.innerHTML = '<div class="card-title">⚖️ Kilo Takibi</div><div class="stat-grid" style="margin-bottom:0"><div class="stat-box"><div class="val">' + first + 'kg</div><div class="lbl">İlk Kilo</div></div><div class="stat-box"><div class="val">' + last + 'kg</div><div class="lbl">Son Kilo</div></div><div class="stat-box" style="grid-column:span 2"><div class="val" style="color:' + (parseFloat(diff)>0?'#9333ea':'#16a34a') + '">' + (diff>0?'+':'') + diff + ' kg</div><div class="lbl">Fark</div></div></div>';
+  } else {
+    weightEl.innerHTML = '<div class="card-title">⚖️ Kilo Takibi</div><div class="empty-state"><p>Kilo kaydı yok</p></div>';
+  }
+}
+
+// ==================== PROFILE ====================
+function renderProfile() {
+  document.getElementById('profileName').textContent = profile.name || 'Adınız';
+  var weeks = profile.startDate ? Math.floor((new Date()-new Date(profile.startDate))/(7*24*60*60*1000)) : null;
+  document.getElementById('profileSub').textContent = weeks !== null ? (weeks + '. Haftada 🌸') : 'Profil henüz doldurulmadı';
+
+  var weights = Object.values(logs).map(function(l){ return l.weight; }).filter(Boolean);
+  var lastWeight = weights.length ? weights[weights.length-1] : null;
+  var gender = profile.gender === 'kız' ? '👧 Kız' : profile.gender === 'erkek' ? '👦 Erkek' : '❓ Bilinmiyor';
+  var startFmt = profile.startDate ? new Date(profile.startDate+'T12:00').toLocaleDateString('tr-TR') : '—';
+  var dueFmt = profile.dueDate ? new Date(profile.dueDate+'T12:00').toLocaleDateString('tr-TR') : '—';
+
+  document.getElementById('profileInfo').innerHTML =
+    '<div class="profile-row"><span class="key">👩 Yaş</span><span class="val">' + (profile.age||'—') + '</span></div>' +
+    '<div class="profile-row"><span class="key">📏 Boy</span><span class="val">' + (profile.height ? profile.height+'cm' : '—') + '</span></div>' +
+    '<div class="profile-row"><span class="key">⚖️ Güncel Kilo</span><span class="val">' + (lastWeight ? lastWeight+'kg' : '—') + '</span></div>' +
+    '<div class="profile-row"><span class="key">📅 Başlangıç</span><span class="val">' + startFmt + '</span></div>' +
+    '<div class="profile-row"><span class="key">🍼 Tahmini Doğum</span><span class="val">' + dueFmt + '</span></div>' +
+    '<div class="profile-row"><span class="key">🍬 Cinsiyet</span><span class="val">' + gender + '</span></div>';
+}
+
+function openProfileEdit() {
+  document.getElementById('pName').value = profile.name || '';
+  document.getElementById('pAge').value = profile.age || '';
+  document.getElementById('pHeight').value = profile.height || '';
+  document.getElementById('pStart').value = profile.startDate || '';
+  document.getElementById('pDue').value = profile.dueDate || '';
+  document.getElementById('pGender').value = profile.gender || '';
+  openModal('profileModal');
+}
+
+function calcDueDate() {
+  var start = document.getElementById('pStart').value;
+  if (!start) return;
+  var d = new Date(start);
+  d.setDate(d.getDate() + 280);
+  document.getElementById('pDue').value = d.toISOString().split('T')[0];
+}
+
+function saveProfile() {
+  profile = {
+    name: document.getElementById('pName').value.trim(),
+    age: parseInt(document.getElementById('pAge').value) || null,
+    height: parseInt(document.getElementById('pHeight').value) || null,
+    startDate: document.getElementById('pStart').value,
+    dueDate: document.getElementById('pDue').value,
+    gender: document.getElementById('pGender').value,
+    updatedAt: new Date().toISOString()
+  };
+  saveToFirebase('data', 'profile', profile);
+  renderProfile();
+  updateHeader();
+  closeModal('profileModal');
+  showToast('✅ Profil kaydedildi!');
+}
+
+// ==================== INDEXEDDB (Photos) ====================
+var idb = null;
+
+function openIDB() {
+  if (idb) return Promise.resolve(idb);
+  return new Promise(function(resolve, reject) {
+    var req = indexedDB.open('HamilikGunluguPhotos', 1);
+    req.onupgradeneeded = function(e) {
+      if (!e.target.result.objectStoreNames.contains('photos'))
+        e.target.result.createObjectStore('photos', { keyPath: 'id' });
+    };
+    req.onsuccess = function(e) { idb = e.target.result; resolve(idb); };
+    req.onerror = reject;
+  });
+}
+
+function loadPhotosFromIDB() {
+  return openIDB().then(function(db) {
+    return new Promise(function(resolve) {
+      var tx = db.transaction('photos', 'readonly');
+      var req = tx.objectStore('photos').getAll();
+      req.onsuccess = function() { photos = req.result || []; resolve(); };
+      req.onerror = function() { photos = []; resolve(); };
+    });
+  }).catch(function() { photos = []; return Promise.resolve(); });
+}
+
+function savePhotoToIDB(photo) {
+  return openIDB().then(function(db) {
+    return new Promise(function(resolve, reject) {
+      var tx = db.transaction('photos', 'readwrite');
+      tx.objectStore('photos').put(photo);
+      tx.oncomplete = resolve;
+      tx.onerror = reject;
+    });
+  });
+}
+
+function deletePhotoFromIDB(id) {
+  return openIDB().then(function(db) {
+    return new Promise(function(resolve) {
+      var tx = db.transaction('photos', 'readwrite');
+      tx.objectStore('photos').delete(id);
+      tx.oncomplete = resolve;
+    });
+  });
+}
+
+// ==================== PHOTOS ====================
+function openAddPhotoModal(date) {
+  document.getElementById('photoDate').value = date || today();
+  var albumSel = document.getElementById('photoAlbum');
+  albumSel.innerHTML = albums.map(function(a){ return '<option value="' + a.id + '">' + a.icon + ' ' + a.name + '</option>'; }).join('');
+  if (!albums.length) albumSel.innerHTML = '<option value="other">📁 Diğer</option>';
+  closeModal('calModal');
+  openModal('photoModal');
+}
+
+function uploadPhotos() {
+  var files = document.getElementById('photoFiles').files;
+  var date = document.getElementById('photoDate').value;
+  var albumId = document.getElementById('photoAlbum').value || 'other';
+
+  if (!files.length || !date) { showToast('⚠️ Tarih ve fotoğraf seçin'); return; }
+  var dayPhotos = photos.filter(function(p){ return p.date === date; });
+  if (dayPhotos.length + files.length > 5) { showToast('⚠️ Günde max 5 fotoğraf'); return; }
+  if (photos.length + files.length > 200) { showToast('⚠️ Max 200 fotoğraf'); return; }
+
+  var fileArr = Array.from(files).slice(0, 5 - dayPhotos.length);
+  var idx = 0;
+  function processNext() {
+    if (idx >= fileArr.length) {
+      closeModal('photoModal');
+      renderGallery();
+      renderCalendar();
+      showToast('✅ ' + fileArr.length + ' fotoğraf yüklendi!');
+      return;
+    }
+    compressImage(fileArr[idx], 1200).then(function(data) {
+      var photo = { id: 'photo_' + Date.now() + '_' + Math.random().toString(36).slice(2), date: date, albumId: albumId, data: data, name: fileArr[idx].name, createdAt: new Date().toISOString() };
+      return savePhotoToIDB(photo).then(function() { photos.push(photo); idx++; processNext(); });
+    });
+  }
+  processNext();
+}
+
+function compressImage(file, maxPx) {
+  return new Promise(function(resolve) {
+    var img = new Image();
+    var url = URL.createObjectURL(file);
+    img.onload = function() {
+      var w = img.width, h = img.height;
+      if (w > maxPx || h > maxPx) {
+        if (w > h) { h = Math.round(h * maxPx / w); w = maxPx; }
+        else { w = Math.round(w * maxPx / h); h = maxPx; }
+      }
+      var c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      c.getContext('2d').drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(url);
+      resolve(c.toDataURL('image/jpeg', 0.82));
+    };
+    img.src = url;
+  });
+}
+
+function renderGallery() {
+  renderAlbumTabs();
+  renderPhotoGrid();
+}
+
+function renderAlbumTabs() {
+  var container = document.getElementById('albumTabs');
+  var html = '<button class="chip ' + (currentGalleryAlbum==='all'?'active':'') + '" onclick="setGalleryAlbum(\'all\')">🌸 Tümü (' + photos.length + ')</button>';
+  albums.forEach(function(a) {
+    var cnt = photos.filter(function(p){ return p.albumId === a.id; }).length;
+    html += '<button class="chip ' + (currentGalleryAlbum===a.id?'active':'') + '" onclick="setGalleryAlbum(\'' + a.id + '\')">' + a.icon + ' ' + a.name + ' (' + cnt + ')</button>';
+  });
+  var otherCnt = photos.filter(function(p){ return !albums.find(function(a){ return a.id === p.albumId; }); }).length;
+  html += '<button class="chip ' + (currentGalleryAlbum==='other'?'active':'') + '" onclick="setGalleryAlbum(\'other\')">📁 Diğer (' + otherCnt + ')</button>';
+  container.innerHTML = html;
+}
+
+function setGalleryAlbum(id) { currentGalleryAlbum = id; renderGallery(); }
+
+function renderPhotoGrid() {
+  var grid = document.getElementById('photoGrid');
+  var filtered = currentGalleryAlbum === 'all' ? photos.slice() :
+    currentGalleryAlbum === 'other' ? photos.filter(function(p){ return !albums.find(function(a){ return a.id === p.albumId; }); }) :
+    photos.filter(function(p){ return p.albumId === currentGalleryAlbum; });
+
+  filtered.sort(function(a,b){ return a.date > b.date ? -1 : 1; });
+
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="empty-state" style="grid-column:span 3"><div class="emoji">📷</div><p>Fotoğraf yok</p></div>';
+    return;
+  }
+  grid.innerHTML = filtered.map(function(p) {
+    return '<div class="photo-thumb" onclick="openLightbox(\'' + p.id + '\')"><img src="' + p.data + '" loading="lazy" alt=""><div class="photo-date">' + new Date(p.date+'T12:00').toLocaleDateString('tr-TR',{day:'numeric',month:'short'}) + '</div></div>';
+  }).join('');
+}
+
+function openLightbox(id) {
+  var photo = photos.find(function(p){ return p.id === id; });
+  if (!photo) return;
+  lightboxPhotoId = id;
+  document.getElementById('lightboxImg').src = photo.data;
+  document.getElementById('lightboxFooter').textContent = new Date(photo.date+'T12:00').toLocaleDateString('tr-TR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  document.getElementById('lightbox').classList.add('open');
+}
+
+function closeLightbox(e) {
+  if (!e || e.target === document.getElementById('lightbox')) {
+    document.getElementById('lightbox').classList.remove('open');
+    lightboxPhotoId = null;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.lightbox-close').addEventListener('click', function() {
+    document.getElementById('lightbox').classList.remove('open');
+    lightboxPhotoId = null;
+  });
+});
+
+function deleteCurrentPhoto() {
+  if (!lightboxPhotoId) return;
+  showConfirm('Fotoğrafı Sil?', 'Bu fotoğraf kalıcı olarak silinecek.', function() {
+    deletePhotoFromIDB(lightboxPhotoId).then(function() {
+      photos = photos.filter(function(p){ return p.id !== lightboxPhotoId; });
+      document.getElementById('lightbox').classList.remove('open');
+      lightboxPhotoId = null;
+      renderGallery();
+      renderCalendar();
+      showToast('🗑️ Silindi');
+    });
+  });
+}
+
+// ==================== ALBUMS ====================
+function loadAlbums() {
+  var saved = localStorage.getItem('hg_albums');
+  albums = saved ? JSON.parse(saved) : [];
+}
+function saveAlbums() { localStorage.setItem('hg_albums', JSON.stringify(albums)); }
+
+function openAlbumManager() {
+  renderAlbumList();
+  openModal('albumModal');
+}
+
+function renderAlbumList() {
+  var container = document.getElementById('albumList');
+  if (!albums.length) { container.innerHTML = '<p style="font-size:13px;color:var(--text-light);text-align:center">Albüm yok</p>'; return; }
+  container.innerHTML = albums.map(function(a) {
+    var cnt = photos.filter(function(p){ return p.albumId === a.id; }).length;
+    return '<div class="pdf-item"><span style="font-size:18px">' + a.icon + '</span><span class="pdf-name">' + a.name + ' (' + cnt + ')</span><div class="pdf-actions"><button class="btn btn-danger btn-sm" onclick="deleteAlbum(\'' + a.id + '\')">🗑️</button></div></div>';
+  }).join('');
+}
+
+function createAlbum() {
+  var name = document.getElementById('newAlbumName').value.trim();
+  var icon = document.getElementById('newAlbumIcon').value;
+  if (!name) { showToast('⚠️ İsim girin'); return; }
+  var album = { id: 'album_' + Date.now(), name: name, icon: icon, createdAt: new Date().toISOString() };
+  albums.push(album);
+  saveAlbums();
+  document.getElementById('newAlbumName').value = '';
+  renderAlbumList();
+  renderGallery();
+  showToast('✅ ' + icon + ' ' + name + ' oluşturuldu');
+}
+
+function deleteAlbum(id) {
+  showConfirm('Albümü Sil?', 'Fotoğraflar "Diğer" albümüne taşınacak.', function() {
+    photos.forEach(function(p){ if (p.albumId === id) { p.albumId = 'other'; savePhotoToIDB(p); } });
+    albums = albums.filter(function(a){ return a.id !== id; });
+    saveAlbums();
+    renderAlbumList();
+    renderGallery();
+    showToast('🗑️ Albüm silindi');
+  });
+}
+
+// ==================== PDFs ====================
+function loadPDFs() {
+  var saved = localStorage.getItem('hg_pdfs');
+  pdfs = saved ? JSON.parse(saved) : [];
+  renderPDFs();
+}
+function savePDFs() { localStorage.setItem('hg_pdfs', JSON.stringify(pdfs)); }
+
+function addPDF(input) {
+  var file = input.files[0];
+  if (!file) return;
+  if (pdfs.length >= 10) { showToast('⚠️ Max 10 PDF'); input.value=''; return; }
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    pdfs.push({ id: Date.now(), name: file.name, data: e.target.result, addedAt: new Date().toISOString() });
+    savePDFs();
+    renderPDFs();
+    showToast('✅ PDF eklendi');
+  };
+  reader.readAsDataURL(file);
+  input.value = '';
+}
+
+function renderPDFs() {
+  var container = document.getElementById('pdfList');
+  if (!pdfs.length) { container.innerHTML = '<div class="empty-state"><div class="emoji">📄</div><p>PDF yok</p><small>Max 10 tahlil PDF\'i ekleyebilirsiniz</small></div>'; return; }
+  container.innerHTML = pdfs.map(function(p) {
+    return '<div class="pdf-item"><span style="font-size:18px">📄</span><span class="pdf-name">' + p.name + '</span><div class="pdf-actions"><button class="btn btn-secondary btn-sm" onclick="downloadPDF(' + p.id + ')">⬇️</button><button class="btn btn-danger btn-sm" onclick="deletePDF(' + p.id + ')">🗑️</button></div></div>';
+  }).join('');
+}
+
+function downloadPDF(id) {
+  var pdf = pdfs.find(function(p){ return p.id == id; });
+  if (!pdf) return;
+  var a = document.createElement('a');
+  a.href = pdf.data; a.download = pdf.name; a.click();
+}
+
+function deletePDF(id) {
+  showConfirm('PDF\'i Sil?', 'Bu PDF kalıcı olarak silinecek.', function() {
+    pdfs = pdfs.filter(function(p){ return p.id != id; });
+    savePDFs();
+    renderPDFs();
+    showToast('🗑️ Silindi');
+  });
+}
+
+function switchGalleryTab(tab, el) {
+  document.getElementById('galleryPhotos').style.display = tab === 'photos' ? '' : 'none';
+  document.getElementById('galleryPdfs').style.display = tab === 'pdfs' ? '' : 'none';
+  document.querySelectorAll('.sub-tab').forEach(function(t){ t.classList.remove('active'); });
+  el.classList.add('active');
+}
+
+// ==================== AI ====================
+var FRUIT_BY_WEEK = {4:'🫐',5:'🍓',6:'🫒',7:'🫘',8:'🫑',9:'🫛',10:'🍇',11:'🍋',12:'🍊',13:'🍑',14:'🍋',15:'🍐',16:'🥑',17:'🍌',18:'🥒',19:'🍅',20:'🥕',21:'🌽',22:'🍆',23:'🥦',24:'🌽',25:'🥬',26:'🥒',27:'🍆',28:'🥑',29:'🎃',30:'🍉',31:'🥥',32:'🍍',33:'🍈',34:'🍈',35:'🍈',36:'🍉',37:'🍉',38:'🍉',39:'🍉',40:'👶'};
+
+function getWeek() {
+  if (!profile.startDate) return 0;
+  return Math.floor((new Date()-new Date(profile.startDate))/(7*24*60*60*1000));
+}
+
+function updateFruitDisplay() {
+  var week = getWeek();
+  if (week > 0) {
+    var fruit = FRUIT_BY_WEEK[Math.min(week,40)] || '👶';
+    document.getElementById('fruitEmoji').textContent = fruit;
+    document.getElementById('fruitTitle').textContent = week + '. haftada bebeğiniz';
+    document.getElementById('fruitSub').textContent = 'AI değerlendirmesi için butona tıklayın';
+  }
+}
+
+function runAI() {
+  var key = claudeApiKey;
+  if (!key) { showToast('⚠️ Önce Claude API Key girin (Ayarlar)'); return; }
+  var btn = document.getElementById('aiBtn');
+  var result = document.getElementById('aiResult');
+  btn.disabled = true; btn.textContent = '⏳ Değerlendiriliyor...';
+  result.innerHTML = '<div class="loading-dots"><span></span><span></span><span></span></div>';
+
+  var week = getWeek();
+  var logArr = Object.values(logs).sort(function(a,b){ return a.date>b.date?1:-1; });
+  var noteArr = Object.keys(notes).map(function(d){ return d + ': ' + notes[d]; });
+
+  var prompt = 'Sen deneyimli ve şefkatli bir gebelik koçusun. Aşağıdaki hamilelik verilerini Türkçe olarak değerlendir.\n\nProfil: ' + JSON.stringify(profile) + '\nGebelik Haftası: ' + week + '\nSon 10 Günlük Kayıt: ' + JSON.stringify(logArr.slice(-10)) + '\nNotlar: ' + noteArr.slice(-5).join('\n') + '\nFotoğraf Sayısı: ' + photos.length + '\n\nŞu başlıklar altında Türkçe değerlendirme yap (her başlık 2-3 cümle, yıldız/# kullanma):\n\nGebelik Haftası ve Bebek Büyüklüğü\nGenel Durum\nBeslenme ve Hareket\nBu Haftanın Öne Çıkanları\nÖnümüzdeki Haftalar\nKişisel Gelişim\nMotivasyon\n\nSon satırda: DOGUM_TARIHI: değişmedi  veya  DOGUM_TARIHI: YYYY-MM-DD';
+
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': key,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:1500, messages:[{role:'user',content:prompt}] })
+  }).then(function(r){ return r.json(); }).then(function(data) {
+    var text = (data.content && data.content[0] && data.content[0].text) || 'Yanıt alınamadı.';
+    var ddMatch = text.match(/DOGUM_TARIHI:\s*(\d{4}-\d{2}-\d{2})/);
+    if (ddMatch) {
+      profile.dueDate = ddMatch[1];
+      saveToFirebase('data','profile',profile);
+      renderProfile();
+      showToast('📅 Doğum tarihi güncellendi');
+    }
+    var cleanText = text.replace(/DOGUM_TARIHI:.*$/m,'').trim();
+    result.innerHTML = renderAIResult(parseAISections(cleanText));
+    var fruit = FRUIT_BY_WEEK[Math.min(week,40)] || '👶';
+    document.getElementById('fruitEmoji').textContent = fruit;
+    document.getElementById('fruitTitle').textContent = week + '. haftada bebeğiniz';
+    document.getElementById('fruitSub').textContent = 'AI değerlendirmesi tamamlandı ✨';
+  }).catch(function(e) {
+    result.innerHTML = '<div class="card"><p style="color:#dc2626;font-size:13px">⚠️ Hata: ' + e.message + '</p></div>';
+  }).finally(function() {
+    btn.disabled = false; btn.textContent = '🔄 Tekrar Değerlendir';
+  });
+}
+
+function parseAISections(text) {
+  var titles = ['Gebelik Haftası ve Bebek Büyüklüğü','Genel Durum','Beslenme ve Hareket','Bu Haftanın Öne Çıkanları','Önümüzdeki Haftalar','Kişisel Gelişim','Motivasyon'];
+  var emojis = {'Gebelik Haftası ve Bebek Büyüklüğü':'🍼','Genel Durum':'💫','Beslenme ve Hareket':'🥗','Bu Haftanın Öne Çıkanları':'⭐','Önümüzdeki Haftalar':'🔮','Kişisel Gelişim':'🌱','Motivasyon':'💪'};
+  var sections = [];
+  for (var i=0; i<titles.length; i++) {
+    var t = titles[i], next = titles[i+1];
+    var idx = text.indexOf(t);
+    if (idx === -1) continue;
+    var start = idx + t.length;
+    var end = next ? text.indexOf(next) : text.length;
+    var content = text.slice(start, end > -1 ? end : undefined).replace(/^[\s:*\-]+/,'').trim();
+    if (content) sections.push({ title:t, content:content, emoji:emojis[t]||'✨' });
+  }
+  if (!sections.length) sections.push({ title:'Değerlendirme', content:text, emoji:'🤖' });
+  return sections;
+}
+
+function renderAIResult(sections) {
+  return sections.map(function(s) {
+    return '<div class="ai-card"><div class="ai-section-title">' + s.emoji + ' ' + s.title + '</div><div class="ai-text">' + s.content + '</div></div>';
+  }).join('');
+}
+
+// ==================== SETTINGS ====================
+function showSettingsPanel(id) {
+  document.querySelectorAll('.settings-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('panel-'+id).classList.add('active');
+}
+
+function saveApiSettings() {
+  var fbKey = document.getElementById('settFirebaseKey').value.trim();
+  var fbAuth = document.getElementById('settFirebaseAuth').value.trim();
+  var fbProject = document.getElementById('settFirebaseProject').value.trim();
+  var clKey = document.getElementById('settClaudeKey').value.trim();
+
+  if (fbKey && fbAuth && fbProject) {
+    var config = { apiKey:fbKey, authDomain:fbAuth, projectId:fbProject };
+    localStorage.setItem('hg_firebase', JSON.stringify(config));
+    claudeApiKey = clKey;
+    if (db) db.doc('data/settings').set({ claudeKey: clKey }, { merge:true }).catch(function(){});
+    showToast('✅ Kaydedildi! Sayfa yenileniyor...');
+    setTimeout(function(){ location.reload(); }, 1500);
+  } else if (clKey) {
+    claudeApiKey = clKey;
+    if (db) db.doc('data/settings').set({ claudeKey: clKey }, { merge:true }).catch(function(){});
+    showToast('✅ Claude API Key kaydedildi');
+  } else {
+    showToast('⚠️ Bilgileri doldurun');
+  }
+}
+
+function populateSettings() {
+  var fb = localStorage.getItem('hg_firebase');
+  if (fb) {
+    var c = JSON.parse(fb);
+    document.getElementById('settFirebaseKey').value = c.apiKey || '';
+    document.getElementById('settFirebaseAuth').value = c.authDomain || '';
+    document.getElementById('settFirebaseProject').value = c.projectId || '';
+  }
+  document.getElementById('settClaudeKey').value = claudeApiKey || '';
+  document.querySelectorAll('.theme-dot').forEach(function(d){ d.classList.toggle('active', d.dataset.theme === currentTheme); });
+  document.querySelectorAll('.pattern-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.pattern === currentPattern); });
+}
+
+function applyTheme(theme, el, silent) {
+  var body = document.body;
+  body.className = body.className.replace(/theme-\w+/g,'').trim();
+  if (theme) body.classList.add('theme-'+theme);
+  currentTheme = theme;
+  if (!silent) {
+    saveLocalSettings();
+    document.querySelectorAll('.theme-dot').forEach(function(d){ d.classList.toggle('active', d.dataset.theme === theme); });
+    showToast('🎨 Tema değiştirildi');
+  }
+}
+
+function applyPattern(pattern, el, silent) {
+  var body = document.body;
+  body.className = body.className.replace(/pattern-\w+/g,'').trim();
+  if (pattern) body.classList.add('pattern-'+pattern);
+  currentPattern = pattern;
+  if (!silent) {
+    saveLocalSettings();
+    document.querySelectorAll('.pattern-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.pattern === pattern); });
+  }
+}
+
+function loadLocalSettings() {
+  var s = localStorage.getItem('hg_settings');
+  if (s) {
+    var p = JSON.parse(s);
+    currentTheme = p.theme || '';
+    currentPattern = p.pattern || '';
+    applyTheme(currentTheme, null, true);
+    applyPattern(currentPattern, null, true);
+  }
+}
+
+function saveLocalSettings() {
+  localStorage.setItem('hg_settings', JSON.stringify({ theme:currentTheme, pattern:currentPattern }));
+}
+
+// ==================== DATA RESET ====================
+function confirmReset(type) {
+  var labels = { profile:'Kişisel bilgiler', logs:'Tüm günlük kayıtlar', notes:'Tüm notlar', photos:'Tüm fotoğraflar', all:'TÜM VERİLER' };
+  showConfirm(labels[type] + ' Silinsin mi?', 'Bu işlem geri alınamaz!', function() {
+    var p = Promise.resolve();
+    if (type==='profile'||type==='all') { profile={}; p=p.then(function(){ return saveToFirebase('data','profile',{}); }); }
+    if (type==='logs'||type==='all') {
+      Object.keys(logs).forEach(function(d){ deleteFromFirebase('logs',d); });
+      logs={};
+    }
+    if (type==='notes'||type==='all') { notes={}; p=p.then(function(){ return saveToFirebase('data','notes',{}); }); }
+    if (type==='photos'||type==='all') {
+      p=p.then(function(){
+        return openIDB().then(function(db){
+          return new Promise(function(r){ var tx=db.transaction('photos','readwrite'); tx.objectStore('photos').clear(); tx.oncomplete=r; });
+        }).then(function(){ photos=[]; });
+      });
+    }
+    if (type==='all') { localStorage.removeItem('hg_albums'); localStorage.removeItem('hg_pdfs'); albums=[]; pdfs=[]; }
+    p.then(function(){ renderCalendar(); renderStats(); renderProfile(); renderGallery(); renderPDFs(); updateHeader(); showToast('🗑️ Silindi'); });
+  });
+}
+
+// ==================== MODALS ====================
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.modal-overlay').forEach(function(o) {
+    o.addEventListener('click', function(e){ if(e.target===o) o.classList.remove('open'); });
+  });
+});
+
+function openDrawer() {
+  populateSettings();
+  document.getElementById('drawerOverlay').classList.add('open');
+  document.getElementById('drawer').classList.add('open');
+}
+function closeDrawer() {
+  document.getElementById('drawerOverlay').classList.remove('open');
+  document.getElementById('drawer').classList.remove('open');
+}
+
+// ==================== CONFIRM ====================
+function showConfirm(title, text, onOk) {
+  document.getElementById('confirmTitle').textContent = title;
+  document.getElementById('confirmText').textContent = text;
+  pendingConfirmAction = onOk;
+  document.getElementById('confirmOverlay').classList.add('open');
+}
+function closeConfirm() { document.getElementById('confirmOverlay').classList.remove('open'); pendingConfirmAction=null; }
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('confirmOkBtn').addEventListener('click', function() {
+    if (pendingConfirmAction) pendingConfirmAction();
+    closeConfirm();
+  });
+});
+
+// ==================== TOAST ====================
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 2500);
+}
+
+// ==================== TAB SWITCH ====================
+function switchTab(tab, el) {
+  document.querySelectorAll('.tab-content').forEach(function(t){ t.classList.remove('active'); });
+  document.querySelectorAll('.nav-item').forEach(function(n){ n.classList.remove('active'); });
+  document.getElementById('tab-'+tab).classList.add('active');
+  if (el) el.classList.add('active');
+  if (tab==='istatistik') renderStats();
+  if (tab==='takvim') renderCalendar();
+  if (tab==='profil') renderProfile();
+  if (tab==='galeri') { renderGallery(); renderPDFs(); }
+  if (tab==='ai') updateFruitDisplay();
+}
+
+function switchTabById(tab) {
+  var el = document.querySelector('.nav-item[data-tab="' + tab + '"]');
+  switchTab(tab, el);
+}
+
+// ==================== UTILS ====================
+function today() {
+  var d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+
+// ==================== PWA ====================
+if ('serviceWorker' in navigator) {
+  try {
+    var swCode = "const CACHE='hg-v1';self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['/']))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));";
+    var blob = new Blob([swCode],{type:'application/javascript'});
+    navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(function(){});
+  } catch(e){}
+}
+try {
+  var manifest = {name:"Şeymoş'un Hamilelik Günlüğü",short_name:'Hamilelik',start_url:'.',display:'standalone',background_color:'#fdf4ff',theme_color:'#c084fc',icons:[{src:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>",sizes:'192x192',type:'image/svg+xml'}]};
+  document.getElementById('manifest-link').href = URL.createObjectURL(new Blob([JSON.stringify(manifest)],{type:'application/manifest+json'}));
+} catch(e){}
+</script>
+
+</body>
+</html>
